@@ -13,3 +13,4 @@ installService.cmd
 *.tlog
 setEnv.*
 *Service*
+/build/
