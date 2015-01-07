@@ -30,7 +30,6 @@ public class ReqParamUtil {
 		DEF_IGNORE_PARAM_NAME.add("MBK_BOCOMACC_PASSWORD");
 		DEF_IGNORE_PARAM_NAME.add("cssFileName");
 		DEF_IGNORE_PARAM_NAME.add("sendPass");
-		DEF_IGNORE_PARAM_NAME.add("loginType");
 	}
 	
 	/**在request对象中，获得参数的值<br/>
