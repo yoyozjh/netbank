@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=GBK"%>
 <%@ page import="com.bocom.midserv.gz.*"%>
+<%@ page import="com.gdbocom.util.WelUtils" %>
 <%@ page import="com.gdbocom.util.PreAction" %>
 <%@ page import="com.gdbocom.Transactions.WelLot" %>
 <%@include file="/includeFiles/common.jsp" %>
@@ -11,7 +12,16 @@
 	String action_next;
 	if(bus==WelLot.DOUBLE_SEL){
 		action_next="Wel_Dou_Buy.jsp";
-
+		
+		//判断当前时间能否购买双色球
+		if(!WelUtils.canBuyDou()){
+			StringBuffer forwardString = new StringBuffer();
+			forwardString.append("errPage.jsp").append("?");
+			forwardString.append("RspCod").append("=").append("timeout");
+			forwardString.append("&");
+			forwardString.append("RspMsg").append("=").append("购彩时间已经截止！");
+	        pageContext.forward(forwardString.toString());
+		}
 	}else if(bus==WelLot.DOUBLE_BETSQRY){
 		//保存通讯字段
 		/*

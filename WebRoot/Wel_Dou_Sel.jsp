@@ -38,6 +38,11 @@
 				</SELECT>
 	        </td>
 	     </tr>
+	     <tr class="tab_tr"> 
+	        <td align="center" colspan="3">
+	        	<div style="color: red;">定投单购买是开奖日12:00前投注当期，12:00后下的定投单在下一期投注</div>
+	        </td>
+	     </tr>
 	     <tr class="tab_result"> 
 	        <td align="center" colspan="2">
 	            <input type="submit" class="button_bg" value="确定" style="cursor:hand;"/>

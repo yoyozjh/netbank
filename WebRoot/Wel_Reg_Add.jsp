@@ -26,7 +26,7 @@
         <script type="text/javascript">
 	    	jQuery(document).ready(function(){
 				jQuery.formValidator.initConfig({formid:"form1",onerror:function(msg){jQuery(":button").attr("disabled",false);alert(msg);}});
-				//jQuery("#IdNo").formValidator().regexValidator({regexp:"idcard",datatype:"enum",onerror:"请填写正确的身份证号码!"});
+				//jQuery("#agree").formValidator().inputValidator({min:1,onerror: "请选择是否同意申购委托协议，不同意将无法注册!"});
 				jQuery("#MobTel,#MobTel_Con").formValidator().inputValidator({min:1,onerror: "请填写正确的手机号!"});
 				jQuery("#MobTel,#MobTel_Con").formValidator().regexValidator({regexp:"mobile",datatype:"enum",onerror:"请填写正确的手机号!"});
 				//mobile
@@ -44,6 +44,12 @@
 	    				return false;
 	    			}
 	    		});
+				
+	    		$("#agree").click(function(){
+    			  var v=$("#commit").attr("disabled");
+    			  $("#commit").attr("disabled",!v);
+	    		});
+
 	    	});
         </script>
     </head>
@@ -113,6 +119,16 @@
 				<input type='text' name='MobTel_Con' id='MobTel_Con'/>
 	        </td>
 	     </tr>
+	     <tr class="tab_tr"> 
+	     	<td align="right">
+	           
+	        </td>
+	        <td align="left"> 
+	        	<input id="agree" type="checkbox"/>
+				我同意
+				<a href="/personbank/HttpProxy?URL=/midserv/Wel_Protocol.jsp&dse_sessionId=<%=dse_sessionId%>" style="color: red;">《广东福彩电话投注业务申购委托协议》</a>
+	        </td>
+	     </tr>
 	    <tr class="tab_tr"> 
 	        <td align="center" colspan="2">
 	            <label style="color: red;">（用于发送投注成功确认短信以及中奖通知等相关事宜，如您期间变更手机号，请通过“签约手机号修改”功能及时变更您预留的手机号。）</label>
@@ -120,7 +136,7 @@
 	     </tr>
 	     <tr class="tab_result"> 
 	        <td align="center" colspan="2">
-	            <input type="submit" class="button_bg" value="确定" id="commit" style="cursor:hand;"/>
+	            <input type="submit" class="button_bg" value="确定" id="commit" style="cursor:hand;" disabled="true"/>
 	            <input type="button" class="button_bg" name="Submit3" value="返回" onclick="javascript:history.back()" />
 	        </td>
 	     </tr>
