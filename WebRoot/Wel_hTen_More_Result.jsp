@@ -28,9 +28,9 @@
 	String remark = "";
 	if(bus==WelLot.HP_TEN_QRY){//双色球投注查询
 		title = "";
-		keyOrder = new String[]{"DrawId","KenoId","BetLin", "BetAmt","PlayId","TLogNo"};
+		keyOrder = new String[]{"DrawNm","KenoId","BetLin", "BetAmt","PlayId","TLogNo"};
 		
-		loopShowKey.put("DrawId", "投注期号");
+		loopShowKey.put("DrawNm", "投注期号");
 		loopShowKey.put("KenoId", "小期号");
 		loopShowKey.put("PlayId", "投注种类");
 		loopShowKey.put("BetLin", "投注号码");
@@ -42,9 +42,9 @@
 
 	}else if(bus==WelLot.HP_TEN_WINQRY){//双色球中奖查询
 		title = "";
-		keyOrder = new String[]{"DrawId","KenoId","BetLin", "PrzAmt","PlayId", "TLogNo"};
+		keyOrder = new String[]{"DrawNm","KenoId","BetLin", "PrzAmt","PlayId", "TLogNo"};
 		
-		loopShowKey.put("DrawId", "中奖期号");
+		loopShowKey.put("DrawNm", "中奖期号");
 		loopShowKey.put("KenoId", "小期号");
 		loopShowKey.put("PlayId", "投注种类");
 		loopShowKey.put("BetLin", "中奖号码");

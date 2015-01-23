@@ -34,8 +34,8 @@
 		title = "福彩用户注册信息更改成功";
 	}else if(bus==WelLot.DOUBLE_SEL){//双色球自选
 		title = "双色球实时投注购买成功";
-		keyOrder = new String[]{"BetLin", "BetAmt", "TLogNo"};
-		showKey.put("DrawId", "投注期号");
+		keyOrder = new String[]{"BetLin", "BetAmt", "TLogNo","DrawNm"};
+		showKey.put("DrawNm", "投注期号");
 		showKey.put("BetLin", "投注号码");
 		showKey.put("BetAmt", "投注金额");
 		showKey.put("TLogNo", "投注流水号");
